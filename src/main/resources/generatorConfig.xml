@@ -4,8 +4,6 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!--导入属性配置
-    <properties resource="classpath:generator.properties"></properties>-->
     <!--指定特定数据库的jdbc驱动jar包的位置-->
     <classPathEntry location="D:\\ideaWorkspace\\MyProject\\Project_manage\\mysql-connector-java-5.1.20.jar"/>
 

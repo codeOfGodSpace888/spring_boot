@@ -4,19 +4,19 @@ import com.xxh.first.api.dao.SignupMapper;
 import com.xxh.first.api.service.SignupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class SignupServiceimpl implements SignupService {
     @Autowired
     SignupMapper signupMapper;
-    @Override
+    //spring-boot中使用事务，建议相应的service层在处理相关的事务时，应该选择合适的事务注解来进行完善
+    @Transactional(rollbackFor = {IllegalArgumentException.class})
     public String signup() {
         if(signupMapper.selectByPrimaryKey(1L).getUsername().equals("xxh")) {
-            System.out.println(signupMapper.selectByPrimaryKey(1l).getUsername());
-            return "success";
+            throw new IllegalArgumentException("xxh已经存在，数据将回滚");
         }   else {
-            System.out.println("fail");
-            return "fail";
+            return "success";
         }
     }
 }
