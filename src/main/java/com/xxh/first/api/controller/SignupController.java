@@ -31,7 +31,7 @@ public class SignupController {
     @RequestMapping("/remove")
     @CacheEvict(value = "xxhname")
     public void remove() {
-        System.out.println("test");
+        System.out.println("tes");
         System.out.println("删除了value为xxhname的数据缓存");
     }
 }
