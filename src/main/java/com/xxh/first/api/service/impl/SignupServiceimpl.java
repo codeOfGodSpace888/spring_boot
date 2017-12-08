@@ -3,7 +3,6 @@ package com.xxh.first.api.service.impl;
 import com.xxh.first.api.dao.SignupMapper;
 import com.xxh.first.api.service.SignupService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

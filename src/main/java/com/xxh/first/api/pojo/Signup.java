@@ -1,6 +1,10 @@
 package com.xxh.first.api.pojo;
 
+import javax.persistence.Id;
+
 public class Signup {
+    //集成了IdsMapper<T>，所以需要在这里进行配置
+    @Id
     private Long id;
 
     private String username;
